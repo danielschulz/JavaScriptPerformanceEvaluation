@@ -18,11 +18,17 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
             performance: {
                 siteNamesToMissions: [
                     // 0
+                    { "Welcome": "to JavaScript Performance Evaluation suite" },
+                    // 1
                     { "Scope chains": "Measuring the impact of access times in scope chains" }
                 ]
             },
 
             emptyString: ""
+        },
+
+        backLink: function() {
+            return window.history.back();
         },
 
         startup: function() {
@@ -46,7 +52,7 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
 
 
 // constants
-var SITE_NAMES_INDEX = 0;
+var SITE_NAMES_INDEX = SITE_NAMES_INDEX || 0;
 
 
 // default startup routine
