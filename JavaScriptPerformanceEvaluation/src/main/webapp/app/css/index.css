@@ -1,0 +1,87 @@
+
+/* generals */
+base,
+body {
+    font-family: 'Verdana', 'Helvetica', sans-serif;
+    font-size: 12px;
+    color: #333333;
+    font-weight: normal;
+}
+
+body {
+    background: white;
+    padding: 10px 20px;
+}
+
+
+/* headings */
+#subHeading,
+#siteMission {
+    font-size: 1em;
+    font-weight: bold;
+    color: #969696;
+}
+
+
+#centralLinksCollection {
+    padding-top: 24px;
+}
+
+#centralLinksCollection > li {
+    margin-bottom: 6px;
+}
+
+
+/* anchors */
+
+li > a:hover, li > a:visited, li > a:link, li > a:active {
+    color: #8b2d4b;
+    font-weight: bold;
+}
+
+li > a:hover:link {
+    text-decoration: underline;
+}
+
+li > a:visited, li > a:link, li > a:active {
+    text-decoration: none;
+}
+
+
+/* lists */
+li {
+    color: #8b2d4b;
+}
+
+
+/* fonts */
+.doubleFontSize {
+    font-size: 2em;
+}
+
+.tripleFontSize {
+    font-size: 3em;
+}
+
+
+/* colors */
+.msgRed,
+a.msgRed:hover, a.msgRed:visited, a.msgRed:link, a.msgRed:active {
+    color: #8b2d4b;
+}
+
+.msgYellow {
+    color: #ff9933;
+}
+
+.msgGrayBG {
+    color: #969696;
+}
+
+.msgGrayFG {
+    color: #333333;
+}
+
+.msgBlue {
+    color: #1c6caa;
+}
