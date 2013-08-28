@@ -28,7 +28,7 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
             measurements: []
         },
 
-        emptyString: "",
+        emptyString: ""
     },
 
     profile: function(fnToProfile, thatRef, timesRef) {
