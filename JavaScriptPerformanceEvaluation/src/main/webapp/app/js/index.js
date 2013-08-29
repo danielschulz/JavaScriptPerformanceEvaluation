@@ -31,37 +31,35 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
         emptyString: ""
     },
 
-    profile: function(fnToProfile, thatRef, timesRef) {
+    profile: function(fnToProfile, thatRef) {
 
         var that = thatRef || window;
         var fn = fnToProfile || runCase;
-        var times = timesRef || TIMES_TO_RUN_EACH;
 
-        if ("number" !== typeof times) {
-            return undefined;
-        }
 
-        var start = (new Date()).getTime();
+        var suite = new Benchmark.Suite;
 
-        var i = 0;
-        while (i++ < times) {
-            fn.call(that);
-        }
+        // add tests
+        suite
+            .add('case', function () {
+                runCase();
+            })
+            .add('improvement', function () {
+                runImprovement();
+            })
+            // add listeners
+            .on('cycle', function (event) {
+                console.log(String(event.target));
+            })
+            .on('complete', function () {
+                console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+            })
+            // run async
+            .run({ 'async': true });
 
-        var end = (new Date()).getTime();
-        var diff = (end - start);
+        // namespace.static.performance.measurements = namespace.static.performance.measurements.concat(stats);
 
-        namespace.static.performance.measurements = namespace.static.performance.measurements.concat(diff);
-
-        if (namespace.static.performance.measurements.length < MEASUREMENTS_TARGET_COUNT && "function" === typeof runCase) {
-            setTimeout(function () {
-                namespace.profile();
-            }, namespace.static.performance.delayToRunCase);
-        }
-
-        console.log(diff);
-
-        return diff;
+        return undefined;
     },
 
     intensiveFn: function() {
