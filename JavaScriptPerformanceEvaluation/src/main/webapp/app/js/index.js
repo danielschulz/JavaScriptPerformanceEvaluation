@@ -48,6 +48,13 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
         var fn = fnToProfile || runCase;
 
 
+        //noinspection JSUnresolvedVariable
+        if ("function" === typeof initRuns) {
+            //noinspection JSUnresolvedFunction
+            initRuns();
+        }
+
+
         var suite = new Benchmark.Suite;
 
         // add tests
