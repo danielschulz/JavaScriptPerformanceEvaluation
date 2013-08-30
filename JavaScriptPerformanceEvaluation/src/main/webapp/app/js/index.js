@@ -9,9 +9,20 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
                 conjunction: " // ",
 
                 getTitle: function() {
+
+                    if ("number" !== typeof SITE_NAMES_INDEX) {
+                        return;
+                    }
+
                     var name = Object.keys(namespace.static.performance.siteNamesToMissions[SITE_NAMES_INDEX])[0];
                     return this.prefix + (!!name ? (this.conjunction + name) : namespace.static.emptyString);
                 }
+            },
+
+            documentHrefMapping: {
+                "/welcome.html": undefined,
+                "/scopeChains.html": 1,
+                "/loopCounterOpt.html": 2
             }
         },
 
@@ -84,6 +95,11 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
     startup: function() {
         document.title = this.static.html.title.getTitle();
 
+        if ("number" !== typeof SITE_NAMES_INDEX) {
+            return;
+        }
+
+
         var siteName = $('#siteName');
         var siteMission = $('#siteMission');
 
@@ -108,7 +124,27 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
 
 
 // constants
-var SITE_NAMES_INDEX = SITE_NAMES_INDEX || 0;
+function getSiteNameIndex(locationsHref) {
+    var location = locationsHref ||
+        (!!this.location && !!this.location.pathname ? this.location.pathname : undefined);
+
+    if (!location) {
+        return;
+    }
+
+    var res = undefined;
+
+    var findDocument = new RegExp(/^(\/?[A-Z]\:)?(\/[\w\d\.\%\-\_\!\#]+)*$/);
+    var documentHref = location.match(findDocument);
+
+    if ($.isArray(documentHref) && 3 === documentHref.length) {
+        res = namespace.static.html.documentHrefMapping[documentHref[2]];
+    }
+
+    return res;
+}
+
+var SITE_NAMES_INDEX = getSiteNameIndex(window.location.pathname);
 
 
 // default startup routine

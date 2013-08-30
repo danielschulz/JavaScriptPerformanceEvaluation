@@ -1,6 +1,5 @@
 
 var SCOPE_BUILDING_DEPTH = 4;
-var SITE_NAMES_INDEX = SITE_NAMES_INDEX || 1;
 
 var obj0 = {
     undef: undefined,
