@@ -73,8 +73,8 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
         return undefined;
     },
 
-    intensiveFn: function() {
-        var x = 56486515761;
+    intensiveFn: function(arg) {
+        var x = arg || 56486515761;
         var fn = function(x) {
             while(Math.abs(x) > 1) {
                 x = Math.log(Math.pow(Math.pow(Math.abs(x), Math.sin(x)), 11));
