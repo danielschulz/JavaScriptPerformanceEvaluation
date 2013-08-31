@@ -21,21 +21,24 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
 
             documentHrefMapping: {
                 "/welcome.html": undefined,
-                "/scopeChains.html": 1,
-                "/loopCounterOpt.html": 2,
-                "/nodeForthsAndBacks.html": 3
+                "/baseline.html": 1,
+                "/scopeChains.html": 2,
+                "/loopCounterOpt.html": 3,
+                "/nodeForthsAndBacks.html": 4
             }
         },
 
         performance: {
             siteNamesToMissions: [
-                // 0
+                // undefined
                 { "Welcome": "to JavaScript Performance Evaluation suite" },
                 // 1
-                { "Scope chains": "Measuring the impact of access times in scope chains" },
+                { "Baseline": "Empty test cases" },
                 // 2
-                { "Loop counter optimization": "Optimizing counters in loops" },
+                { "Scope chains": "Measuring the impact of access times in scope chains" },
                 // 3
+                { "Loop counter optimization": "Optimizing counters in loops" },
+                // 4
                 { "DOM node manipulation": "Adding and deleting nodes forth and back in DOM" }
             ],
             delayToRunCase: 500,
