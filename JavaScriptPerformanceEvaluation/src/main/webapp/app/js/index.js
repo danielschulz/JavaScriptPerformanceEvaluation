@@ -22,7 +22,8 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
             documentHrefMapping: {
                 "/welcome.html": undefined,
                 "/scopeChains.html": 1,
-                "/loopCounterOpt.html": 2
+                "/loopCounterOpt.html": 2,
+                "/nodeForthsAndBacks.html": 3
             }
         },
 
@@ -33,7 +34,9 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
                 // 1
                 { "Scope chains": "Measuring the impact of access times in scope chains" },
                 // 2
-                { "Loop counter optimization": "Optimizing counters in loops" }
+                { "Loop counter optimization": "Optimizing counters in loops" },
+                // 3
+                { "DOM node manipulation": "Adding and deleting nodes forth and back in DOM" }
             ],
             delayToRunCase: 500,
             measurements: []

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Performance Evaluation</title>
+    <link href="../../../app/css/index.css"
+          rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<article>
+    <h1 id="siteName">Welcome</h1>
+    <span id="siteMission">to JavaScript Performance Evaluation suite</span>
+    <span id="backLink"><a href="javascript:namespace.backLink()">back</a></span>
+
+
+    <template id="exampleDom">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>City</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Gabriella</td>
+                <td>IT</td>
+                <td>Stockholm</td>
+            </tr>
+
+            <tr>
+                <td>Birgit</td>
+                <td>Marketing</td>
+                <td>San Francisco</td>
+            </tr>
+
+            <tr>
+                <td>Michael</td>
+                <td>Sales</td>
+                <td>New York</td>
+            </tr>
+
+            <tr>
+                <td>Brad</td>
+                <td>Management</td>
+                <td>Abu Dhabi</td>
+            </tr>
+            </tbody>
+        </table>
+    </template>
+
+
+    <div id="casesDom" class="example"></div>
+
+    <div id="improvementsDom" class="example"></div>
+</article>
+
+
+
+<script src="../../../app/js/jquery.js"></script>
+<script src="../../../app/js/lodash.js"></script>
+<script src="../../../app/js/Benchmark.js"></script>
+<script src="../../../app/js/namespacedotjs.js"></script>
+
+<script src="nodeForthsAndBacks.js"></script>
+<script src="../../../app/js/index.js"></script>
+
+</body>
+</html>
