@@ -24,7 +24,9 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
                 "/baseline.html": 1,
                 "/scopeChains.html": 2,
                 "/loopCounterOpt.html": 3,
-                "/nodeForthsAndBacks.html": 4
+                "/nodeForthsAndBacks.html": 4,
+                "/indexOfVsRegExp.html": 5,
+                "/multipleBooleanInverting.html": 6
             }
         },
 
@@ -39,7 +41,11 @@ var namespace = new Namespace('de.novensa.web.performance.ui.javascript.JavaScri
                 // 3
                 { "Loop counter optimization": "Optimizing counters in loops" },
                 // 4
-                { "DOM node manipulation": "Adding and deleting nodes forth and back in DOM" }
+                { "DOM node manipulation": "Adding and deleting nodes forth and back in DOM" },
+                // 5
+                { "Primitives": "Comparing concrete string's short circuit OR vs. compiled Regular Expression" },
+                // 6
+                { "Primitives": "Measuring the impact of multiple (10x) boolean inverting operations" }
             ],
             delayToRunCase: 500,
             measurements: []
